@@ -1,5 +1,7 @@
 package DBMS_PROJECT;
-
+/*
+@author Anish R
+ */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,6 +10,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
+
  class CUSTOMER extends javax.swing.JFrame {
     Connection Con=null;
     PreparedStatement pst=null;
@@ -25,7 +29,7 @@ import javax.swing.table.DefaultTableModel;
         try{
             String sql="select * from CUSTOMER";
            // Class.forName("oracle.jdbc.OracleDriver");
-            Con=DriverManager.getConnection("jdbc:mysql://localhost:3306/database","admin","password");
+            Con=DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila","root","password");
             JOptionPane.showMessageDialog(null,"connected");
             String colhead[]={"FNAME","LNAME","CUSTID","EMAILID","PWD","ADDRESS","STREET","PINCODE","GENDER","PHONENO","ALLERGY"};
             DM.setColumnIdentifiers(colhead);
