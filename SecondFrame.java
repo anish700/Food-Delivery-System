@@ -126,8 +126,8 @@ public class SecondFrame {
             public void actionPerformed(ActionEvent ae) {
                 f2.dispose();
                 bok2Action();
-                JOptionPane.showMessageDialog(null, "Your account has been created !");
-                new MyLogin();
+
+
             }
         });
         back.addActionListener(new ActionListener() {
@@ -156,10 +156,17 @@ public class SecondFrame {
                 pst.setString(3,phno.getText());
 
                 pst.executeUpdate();
-
+                JOptionPane.showMessageDialog(null, "Your account has been created !");
+                new MyLogin();
 
             }
+
         } catch (SQLException e) {
+           // if(fname.getText()==null||pwdd.getText()==null||phno.getText()==null) {
+                JOptionPane.showMessageDialog(null, "fill all details");
+
+            //JOptionPane.showMessageDialog(null,);
+            new SecondFrame();
             e.printStackTrace();
         }
     }
